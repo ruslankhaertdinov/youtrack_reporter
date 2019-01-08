@@ -8,30 +8,9 @@ describe ParseCsv do
 
     context 'валидный источник' do
       let(:source_path) { 'spec/fixtures/report.csv' }
-
       let(:expected_result) do
-        [
-          { project: 'ЭТП ГПБ',
-            title: 'Выгрузка процедур',
-            percent: '50%',
-            author: 'Петров Пётр' },
-          { project: 'Финсуп',
-            title: 'Task. Генерация pdf сертификата ЭП (бэк)',
-            percent: '50%',
-            author: 'Иванов Иван' },
-          { project: 'Арбитраж',
-            title: 'Исправить ошибку плавающих багов в тестах',
-            percent: '100%',
-            author: 'Носов Никита' },
-          { project: 'УЦ',
-            title: 'Task. Отправка данных из формы заявки на консультацию (фронт)',
-            percent: '50%',
-            author: 'Ломов Леонид' },
-          { project: 'Трейдинспект',
-            title: 'Верстка промо страницы Поставщики',
-            percent: '100%',
-            author: 'Иванов Иван' }
-        ]
+        array = JSON.parse(File.read('spec/fixtures/report.json'))
+        array.map(&:deep_symbolize_keys)
       end
 
       it 'вернёт распарсенный набор данных' do
