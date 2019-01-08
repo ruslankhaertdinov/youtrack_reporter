@@ -14,9 +14,7 @@ class WriteToFile
     p = Axlsx::Package.new
     p.workbook.add_worksheet(name: 'Отчёт') do |sheet|
       sheet.add_row(%w[Проект Задача Выполнение Автор])
-      grouped_data.each do |issue|
-        sheet.add_row(issue.values)
-      end
+      grouped_data.each { |data| sheet.add_row(data.values) }
     end
     p.serialize(report_path)
   end
