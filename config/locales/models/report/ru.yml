@@ -1,0 +1,16 @@
+ru:
+  active_record:
+    models:
+      report:
+    attributes:
+      report:
+        file: Файл
+  simple_form:
+    labels:
+      report:
+        new:
+          file: Файл-источник
+    hints:
+      report:
+        new:
+          file: Отчёт из ютрека в csv формате

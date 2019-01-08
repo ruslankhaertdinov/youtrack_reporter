@@ -1,4 +1,14 @@
 .row
   .columns
-    h2
-      = title("Home")
+    h2 = title("Отчёт")
+
+.row
+  .medium-5.columns
+    = simple_form_for :report, url: reports_path, html: { method: :post } do |f|
+      .form-inputs
+        = f.input :file,
+          as: :file,
+          required: true
+
+      .form-actions
+        = f.button :submit, "Сформировать"
