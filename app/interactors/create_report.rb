@@ -1,5 +1,5 @@
 class CreateReport
   include Interactor::Organizer
 
-  organize ParseCsv, WriteToFile
+  organize ParseCsv, GroupData, WriteToFile
 end
