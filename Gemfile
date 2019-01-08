@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "2.5.3"
+ruby "2.4.2"
 
 gem "pg"
 gem "rails", "5.1.2"
@@ -10,7 +10,7 @@ gem "autoprefixer-rails"
 gem "coffee-rails"
 gem "foundation-icons-sass-rails"
 gem "foundation-rails"
-gem "mini_racer"
+gem "mini_racer", "~> 0.2.4"
 gem "premailer-rails"
 gem "sass-rails", "~> 5.0.0", ">= 5.0.6"
 gem "uglifier", ">= 2.7.2"

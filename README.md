@@ -6,7 +6,7 @@ Build weekly reports from csv source file
 
 ## Dependencies
 
-* Ruby 2.5.3
+* Ruby 2.4.2
 * Rails 5
 
 Setup required dependencies from `Brewfile`:
