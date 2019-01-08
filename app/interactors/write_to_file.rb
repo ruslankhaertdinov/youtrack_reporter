@@ -26,7 +26,7 @@ class WriteToFile
   end
 
   def report_path
-    'tmp/result.xlsx'
+    'tmp/report.xlsx'
   end
 
   def group_by_project
