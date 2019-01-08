@@ -4,7 +4,7 @@
 
 .row
   .medium-5.columns
-    = simple_form_for :report, url: reports_path, html: { method: :post } do |f|
+    = simple_form_for :report, url: reports_path do |f|
       .form-inputs
         = f.input :file,
           as: :file,

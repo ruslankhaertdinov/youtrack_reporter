@@ -4,7 +4,7 @@ class WriteToFile
   delegate :parsed_data, to: :context
 
   def call
-    write_to_file || context.fail!(error: 'Cant write to file')
+    write_to_file || context.fail!(error: 'Ошибка создания отчёта')
     context.report_path = report_path
   end
 
