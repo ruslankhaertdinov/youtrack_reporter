@@ -16,6 +16,8 @@ class ParseCsv
 
   def call
     context.parsed_data = parsed_data
+  rescue
+    context.fail!(error: 'Некорректный источник данных')
   end
 
   private
@@ -41,8 +43,6 @@ class ParseCsv
   # row[8] - state
   def raw_data
     ::CSV.read(source_path, encoding: 'bom|utf-8')
-  rescue ArgumentError => error
-    context.fail!(error: 'Некорректный источник данных')
   end
 
   def project_name(issue_id)
