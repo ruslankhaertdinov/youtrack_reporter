@@ -10,7 +10,7 @@ gem "autoprefixer-rails"
 gem "coffee-rails"
 gem "foundation-icons-sass-rails"
 gem "foundation-rails"
-gem "mini_racer"
+gem "mini_racer", "~> 0.2.4"
 gem "premailer-rails"
 gem "sass-rails", "~> 5.0.0", ">= 5.0.6"
 gem "uglifier", ">= 2.7.2"
@@ -28,6 +28,7 @@ gem "simple_form"
 gem "slim"
 
 # all other gems
+gem 'axlsx'
 gem "decent_decoration"
 gem "decent_exposure"
 gem "devise"
