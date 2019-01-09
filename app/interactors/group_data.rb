@@ -4,7 +4,7 @@ class GroupData
   delegate :parsed_data, to: :context
 
   def call
-    context.grouped_data = grouped_data
+    context.grouped_data = grouped_data.uniq
   rescue
     context.fail!(error: 'Ошибка формирования данных')
   end
