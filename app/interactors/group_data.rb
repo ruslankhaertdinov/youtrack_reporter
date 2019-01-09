@@ -12,12 +12,12 @@ class GroupData
   private
 
   def grouped_data
-    group_by_project.flat_map do |_project_name, issues|
-      issues.group_by { |data| data[:author] }.values.flatten
+    group_by_author.flat_map do |_author, issues|
+      issues.group_by { |data| data[:project] }.values.flatten
     end
   end
 
-  def group_by_project
-    parsed_data.group_by { |data| data[:project] }
+  def group_by_author
+    parsed_data.group_by { |data| data[:author] }
   end
 end
