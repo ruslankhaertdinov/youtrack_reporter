@@ -13,8 +13,11 @@ class WriteToFile
   def write_to_file
     p = Axlsx::Package.new
     p.workbook.add_worksheet(name: 'Отчёт') do |sheet|
-      sheet.add_row(%w[Проект Задача Выполнение Автор])
-      grouped_data.each { |data| sheet.add_row(data.values) }
+      sheet.add_row(%w[Автор Проект Задача Выполнение])
+      grouped_data.each do |data|
+        sheet.add_row([data[:author], data[:project], data[:title], data[:percent]])
+      end
+      sheet.column_widths(*[nil, nil, 70, nil])
     end
     p.serialize(report_path)
   end
