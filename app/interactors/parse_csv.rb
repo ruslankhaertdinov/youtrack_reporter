@@ -65,6 +65,6 @@ class ParseCsv
   def fetch_testers
     return %w[s.sidorova] if Rails.env.test?
 
-    (ENV['testers'] || '').split(',').map(&:strip)
+    (ENV['TESTERS'] || '').split(',').map(&:strip)
   end
 end
