@@ -30,16 +30,21 @@ class ParseCsv
   # Процент выполнения
   # Автор
   def parsed_data
+    testers = fetch_testers
+
     raw_data[1..-1].map do |row|
+      next if row[4].in?(testers)
+
       {
         project: project_name(row[6]),
         title: row[7],
         percent: percent(row[8]),
         author: row[5]
       }
-    end
+    end.compact
   end
 
+  # row[4] - user_login
   # row[5] - user_fullname
   # row[6] - issue_id
   # row[7] - title
@@ -55,5 +60,11 @@ class ParseCsv
 
   def percent(state)
     state.in?(DONE_STATES) ? '100%' : '50%'
+  end
+
+  def fetch_testers
+    return %w[s.sidorova] if Rails.env.test?
+
+    (ENV['testers'] || '').split(',').map(&:strip)
   end
 end
