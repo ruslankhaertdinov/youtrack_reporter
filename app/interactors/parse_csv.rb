@@ -5,11 +5,14 @@ class ParseCsv
 
   DONE_STATES = ['В продуктиве', 'Готово'].freeze
   PROJECTS = {
-    finsup20: 'Финсуп',
-    etpgpb_open_part: 'ЭТП ГПБ',
+    finsup20: 'Финансовый супермаркет',
+    etpgpb_open_part: 'ЭТП ГПБ открытая часть',
     tradeins2: 'Трейдинспект',
-    ucgpb: 'УЦ',
-    arbitr: 'Арбитраж'
+    ucgpb: 'Удостоверяющий Центр',
+    arbitr: 'Арбитражный суд',
+    elk: 'Единый Личный Кабинет',
+    invest: 'ИнвестВитрина',
+    invest_open_part: 'ИнвестВитрина открытая часть'
   }.freeze
 
   delegate :source_path, to: :context
