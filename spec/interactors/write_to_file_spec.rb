@@ -3,7 +3,7 @@ require 'rails_helper'
 describe WriteToFile do
   let(:interactor) { described_class.call(grouped_data: grouped_data) }
   let(:grouped_data) do
-    array = JSON.parse(File.read('spec/fixtures/grouped_report.json'))
+    array = JSON.parse(File.read('spec/fixtures/report.json'))
     array.map(&:deep_symbolize_keys)
   end
   let(:file_path) { 'tmp/report.xlsx' }
